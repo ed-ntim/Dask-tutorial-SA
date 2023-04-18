@@ -8,22 +8,11 @@ cd Dask-tutorial-SA
 
 conda env create -f Sera_env.yml
 
-cat<<EOF >>${HOME}/.bashrc
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/apps/chpc/astro/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/apps/chpc/astro/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/apps/chpc/astro/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/apps/chpc/astro/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-EOF
+
+cat conda_init.txt >>${HOME}/.bashrc
 
 
 conda activate py310
+
+
+
