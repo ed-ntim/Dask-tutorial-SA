@@ -14,6 +14,8 @@ or
 ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password  user@scp.chpc.ac.za
 
 
+ssh -i /home/serafina/.ssh/id_Sera_Leng  sdigioia@scp.chpc.ac.za
+
 changing 'user' with your own username.
 It will ask the password associated with your user account.
 
