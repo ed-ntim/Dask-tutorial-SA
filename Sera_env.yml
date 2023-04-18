@@ -85,6 +85,7 @@ dependencies:
   - pcre=8.45=h295c915_0
   - pexpect=4.8.0=pyhd3eb1b0_3
   - pickleshare=0.7.5=pyhd3eb1b0_1003
+  - pip
   - pooch=1.4.0=pyhd3eb1b0_0
   - ptyprocess=0.7.0=pyhd3eb1b0_2
   - pure_eval=0.2.2=pyhd3eb1b0_0
@@ -232,7 +233,7 @@ dependencies:
     - tomli==2.0.1
     - toolz==0.12.0
     - torch==1.12.1
-    - torchvision==0.13.1a0
+    - torchvision==0.13.1
     - tornado==6.2
     - traitlets==5.7.1
     - typing-extensions==4.4.0
