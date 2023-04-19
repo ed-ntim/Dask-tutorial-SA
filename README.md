@@ -7,12 +7,15 @@ To do this you can open the CLI (or terminal) on your laptop
 and type the command below for login node 2 ( a shared login node):
 
 
+```bash
 ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password  user@lengau.chpc.ac.za
+```
 
 or 
 
+```bash
 ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password  user@scp.chpc.ac.za
-
+```
 
 
 
@@ -21,7 +24,7 @@ It will ask the password associated with your user account.
 
 ##Automatic connection to LENGAU CLUSTER
 
-To connect to LENGAU cluster in an automatic and safe way we need to create a pair of ssh keys
+To connect to the CHP  LENGAU cluster in an automatic and safe way we need to create a pair of ssh keys
 
 step 1: ssh key creation
 
@@ -84,21 +87,24 @@ conda env create -f env_tutorial.yml
 
 ##Running jobs on Lengau computing nodes
 
-The Lengau cluster is managed through a PBS scheduler, with queues and projects.
+The Lengau cluster is managed through a PBSPRO scheduler, with queues and projects.
 
 To see  the names of the available queues we can use the command:
 
+```bash
 qstat -q
-
+```
 
 To see on which nodes are running the jobs at the moment 
-
+```
 qstat -rn
+```
 
 To see which nodes are free at the moment:
 
+```bash
 pbsnodes -ajS
-
+```
 
 To run interactive PBS session you can type:
 
@@ -107,10 +113,15 @@ qsub -P CHPC -I -l nodes=1:ppn=4,walltime=00:15:00 -j Sera_test
 ```
 
 
-##Overview of the Python scripts
- The Python scripts that we will use in this tutorial activity focus on a classification task, and make use of two common datasets in Supervised ML: digits
+##Overview of the Python scriptst
+
+The Python scripts that we will use in this tutorial activity focus on a classification task, and make use of two common datasets in Supervised ML: digits
 dataset and iris dataset
 
+
+All the python scripts that we will use today are in the subfolder scripts
+
+ 
  
 
 ##Overview of the notebooks
