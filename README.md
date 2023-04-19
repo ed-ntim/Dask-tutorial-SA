@@ -73,7 +73,7 @@ Whereas pip only installs Python packages from PyPI, conda can both
 
 
 
-To automize this process I created the file env_tutorial.yml
+To automize this process I created the file Sera_env2.yml
 from which you can set a conda environment doing:
 
 ```bash
