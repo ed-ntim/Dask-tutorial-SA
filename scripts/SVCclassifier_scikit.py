@@ -2,9 +2,7 @@ from sklearn.datasets import load_digits
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 from sklearn.model_selection import GridSearchCV
-from dask_mpi import initialize
-from dask.distributed import Client, as_completed
-import dask.dataframe as dd
+from sklearn.metrics import confusion_matrix
 import joblib
 import time
 
@@ -13,21 +11,7 @@ import time
 
 
 if __name__ == "__main__":
-         
-
-       print('I am before  client inizialization')
-       initialize(memory_limit=2.e9)
-
-       dask_client = Client()
-
-       dask_client.wait_for_workers(n_workers=10)
-       #dask_client.restart()
-
-       num_workers = len(dask_client.scheduler_info()['workers'])
-       print("%d workers available and ready"%num_workers)
-
-
-
+  
        X, y = load_digits(return_X_y=True)
 
        
@@ -48,9 +32,10 @@ if __name__ == "__main__":
                            n_jobs=-1)
 
        t_start = time.time()
-       with joblib.parallel_backend('dask'):
-            grid_search.fit(X, y)
+       grid_search.fit(X, y)
        t_end = time.time()
+
        Delta_t= t_end - t_start
-       print("Delta time to fit and cross-validate SVC model with Dask :", Delta_t)
-       print('computation finished')
+       print("Delta time to fit and cross-validate SVC model with scipy:", Delta_t)
+
+       

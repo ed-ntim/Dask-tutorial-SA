@@ -7,14 +7,15 @@ from dask.distributed import Client, as_completed
 import dask.dataframe as dd
 import joblib
 import time
+from dask.distributed import performance_report
+
+
 
 
 #The digits dataset is a dataset 
 
 
-if __name__ == "__main__":
-         
-
+if __name__ == "__main__":      
        print('I am before  client inizialization')
        initialize(memory_limit=2.e9)
 
@@ -48,8 +49,9 @@ if __name__ == "__main__":
                            n_jobs=-1)
 
        t_start = time.time()
-       with joblib.parallel_backend('dask'):
-            grid_search.fit(X, y)
+       with performance_report(filename="dask-report.html"):
+           with joblib.parallel_backend('dask'):
+              grid_search.fit(X, y)
        t_end = time.time()
        Delta_t= t_end - t_start
        print("Delta time to fit and cross-validate SVC model with Dask :", Delta_t)
