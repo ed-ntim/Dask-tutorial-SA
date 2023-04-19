@@ -14,7 +14,7 @@ or
 ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password  user@scp.chpc.ac.za
 
 
-ssh -i /home/serafina/.ssh/id_Sera_Leng  sdigioia@scp.chpc.ac.za
+
 
 changing 'user' with your own username.
 It will ask the password associated with your user account.
@@ -34,9 +34,14 @@ ssh-keygen -t ecdsa -b 521
 step 2: copy public key to Lengau
 
 ```bash
-scp -o PubkeyAuthentication=no -o PreferredAuthentications=password  .ssh/id_Lengau_user.pub   user@lengau.chpc.ac.za:/home/user/.ssh/
+scp -o PubkeyAuthentication=no -o PreferredAuthentications=password  .ssh/id_user_Leng.pub   user@lengau.chpc.ac.za:/home/user/.ssh/
 ```
+step 3: try the connection
 
+
+```bash
+ssh -i /home/user/.ssh/id_user_Leng  user@scp.chpc.ac.za
+```
 
 ##Setting Python environment
 
@@ -102,6 +107,11 @@ qsub -P CHPC -I -l nodes=1:ppn=4,walltime=00:15:00 -j Sera_test
 ```
 
 
+##Overview of the Python scripts
+ The Python scripts that we will use in this tutorial activity focus on a classification task, and make use of two common datasets in Supervised ML: digits
+dataset and iris dataset
+
+ 
 
 ##Overview of the notebooks
 
