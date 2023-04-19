@@ -7,12 +7,15 @@ To do this you can open the CLI (or terminal) on your laptop
 and type the command below for login node 2 ( a shared login node):
 
 
+```bash
 ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password  user@lengau.chpc.ac.za
+```
 
 or 
 
+```bash
 ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password  user@scp.chpc.ac.za
-
+```
 
 
 
