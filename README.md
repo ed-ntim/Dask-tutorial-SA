@@ -80,7 +80,7 @@ To automize this process I created the file Sera_env2.yml
 from which you can set a conda environment doing:
 
 ```bash
-conda env create -f env_tutorial.yml
+conda env create -f Sera_env2.yml
 ```
 
 
